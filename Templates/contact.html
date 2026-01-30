@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Contact Us
+{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1 class="mb-3">Contact Us</h1>
+    <hr>
+
+    <p>
+        We are here to help you. If you have any questions, need medical assistance,
+        or want to book an appointment, please feel free to contact us.
+    </p>
+
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <h5>Hospital Address</h5>
+            <p>
+                City Care Hospital <br>
+                123 Health Street <br>
+                New City, State – 560001
+            </p>
+
+            <h5>Phone</h5>
+            <p>
+                +1 234 567 8900 <br>
+                +1 987 654 3210
+            </p>
+
+            <h5>Email</h5>
+            <p>
+                contact@citycarehospital.com
+            </p>
+
+            <h5>Working Hours</h5>
+            <p>
+                Monday – Saturday: 8:00 AM – 8:00 PM <br>
+                Emergency Services: 24/7
+            </p>
+        </div>
+
+        <div class="col-md-6">
+            <h5>Send Us a Message</h5>
+            <form method="post">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label class="form-label">Your Name</label>
+                    <input type="text" class="form-control" placeholder="Enter your name">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Email Address</label>
+                    <input type="email" class="form-control" placeholder="Enter your email">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Message</label>
+                    <textarea class="form-control" rows="4" placeholder="Type your message here"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary">
+                    Send Message
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
